@@ -21,6 +21,14 @@
 
     <img src="foto.jpeg" alt="Nossa foto" class="foto">
 
+    <button onclick="controlarMusica()" class="botao-musica" id="botao-musica">
+    Tocar nossa música 🎵
+</button>
+
+<audio id="musica" loop>
+    <source src="musica.mpeg" type="audio/mpeg">
+</audio>
+
     <p>
     Eu quis fazer algo diferente para te mostrar o quanto você é especial para mim.
     Mesmo sendo simples, cada detalhe desse site foi feito com carinho pensando em você.
@@ -33,7 +41,7 @@
     <li>Seu carinho comigo</li>
     <li>A forma como você deixa meus dias melhores</li>
     <li>Seu jeito apaixonada</li>
-    <li>Segurança que me dá</li>
+    <li>A segurança que me dá</li>
 </ul>
 
 <h2>Nossa história</h2>
@@ -46,12 +54,15 @@
 <h2>Momentos especiais</h2>
 
 <div class="momentos">
-    <p>🌹 Nosso primeiro encontro</p>
-    <p>😂 Nossas risadas juntos</p>
-    <p>❤️ Cada abraço que me faz sentir em casa</p>
+    <p>Dia da chácara</p>
+    <p>A primeira vez que fui na sua casa</p>
+    <p>O dia que te contei do meu sentimento e vi que era recíproco</p>
+    <p>Nossa primeira vez saindo juntos</p>
+    <p>Dia que pedi a benção pro seu pai😅</p>
+    <p>Primeiro ano juntos</p>
 </div>
 
-<button onclick="mostrarMensagem()">Clique aqui 💌</button>
+<button id="botao-surpresa" onclick="mostrarMensagem()">Clique aqui 💌</button>
 
 <p id="mensagem-surpresa"></p>
 
@@ -68,9 +79,22 @@
     <script>
     function mostrarMensagem() {
         document.getElementById("mensagem-surpresa").innerHTML =
-            "Meu amor, nesse Dia dos Namorados, eu só queria te lembrar o quanto você é especial pra mim. Você deixa meus dias mais leves, meu coração mais feliz e minha vida muito mais bonita. Obrigado por estar comigo, por cada momento, cada risada e cada carinho. Eu sou muito feliz por ter você ao meu lado. Eu te amo muito, minha princesa. Feliz Dia dos Namorados.❤️            (Ah, já que não sou bom com cartinhas à mão, aí está do meu jeito...)";
+            "Meu amor, nesse Dia dos Namorados, eu só queria te lembrar o quanto você é especial pra mim. Você deixa meus dias mais leves, meu coração mais feliz e minha vida muito mais bonita. Obrigado por estar comigo, por cada momento, cada risada e cada carinho. Eu sou muito feliz por ter você ao meu lado. E amor, pode ter certeza de algo, cada dia que passa, meu amor por você só aumenta, lembro como se fosse ontem do dia da chácara, para mim, foi um dia muito importante, porque foi onde começamos uma amizade sincera, mas confesso que nem acreditava, aliás, nem imaginava onde poderíamos chegar. Porém, onde eu imagino muito longe, UMA VIDA ao seu lado! Só quero que saiba que sempre estarei do seu lado, te apoiando, te incentivando, te corrigindo quando necessário, e claro, te dando todo o amor que você merece... Não é um texto longo (Mas quando você ver o tanto de código que eu usei kakakakakakakakakakakakaka), mas é de coração amor. Eu te amo muito, minha princesa. Feliz Dia dos Namorados.❤️(Ah, já que não sou bom com cartinhas à mão, aí está do meu jeito...)";
         
-        document.querySelector("button").innerHTML = "Surpresa revelada ❤️";
+        document.getElementById("botao-surpresa").innerHTML = "Surpresa revelada ❤️";
+    }
+
+        function controlarMusica() {
+        const musica = document.getElementById("musica");
+        const botaoMusica = document.getElementById("botao-musica");
+
+        if (musica.paused) {
+            musica.play();
+            botaoMusica.innerHTML = "Pausar música ⏸️";
+        } else {
+            musica.pause();
+            botaoMusica.innerHTML = "Tocar nossa música 🎵";
+        }
     }
 </script>
     
